@@ -1,0 +1,116 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ 生成活动文件",
+            "command": "/usr/bin/g++",
+            "args": [
+                "*.cpp",
+                "-o",
+                "${workspaceFolder}/.output/Main",
+                "-g",
+                "-Wall",
+                "-static-libgcc",
+                "-fexec-charset=UTF-8",
+                "-finput-charset=UTF-8"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "focus": true,
+                "reveal": "silent",
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false,
+                "echo": true
+            },
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe 生成活动文件",
+            "command": "D:\\PATH\\mingw64\\bin\\g++.exe",
+            "args": [
+                "*.cpp",
+                "-o",
+                "${workspaceFolder}\\.output\\Main.exe",
+                "-g",
+                "-Wall",
+                "-static-libgcc",
+                "-fexec-charset=UTF-8",
+                "-finput-charset=UTF-8"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "focus": true,
+                "reveal": "silent",
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false,
+                "echo": true
+            },
+            "detail": "编译器: D:\\PATH\\mingw64\\bin\\g++.exe"
+        },
+        {
+            "type": "shell",
+            "label": "Cpp 生成活动文件",
+            "command": "${workspaceFolder}/build.sh",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "none"
+            },
+            "dependsOn": [],
+            "detail": "编译器: /usr/bin/g++"
+        },
+        {
+            "type": "shell",
+            "label": "Cpp 生成并运行",
+            "command": "${workspaceFolder}/Main",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "dependsOn": [
+                "Cpp 生成活动文件"
+            ],
+            "detail": "编译器: /usr/bin/g++"
+        },
+    ],
+    "inputs": [
+        {
+          "type": "promptString",
+          "id": "AddArgs",
+          "description": "请输入要传递给程序的参数",
+          "default": ""
+        },]
+}
